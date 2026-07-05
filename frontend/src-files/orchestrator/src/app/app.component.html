@@ -1,0 +1,17 @@
+<div class="page">
+  <div class="container">
+    <div class="header">
+      <h1>START</h1>
+      <p class="application-id">Identyfikator procesu: <strong>{{ applicationId }}</strong></p>
+    </div>
+
+    <div class="actions">
+      <button type="button" (click)="openKalkulator()">KALKULATOR</button>
+      <button type="button" (click)="opencollector()">collector</button>
+    </div>
+
+    <div class="host-slot">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "../orchestrator/src",
+    "outDir": "../../out-tsc/app",
+    "types": []
+  },
+  "include": ["../orchestrator/src/**/*.ts"],
+  "exclude": ["../orchestrator/src/**/*.spec.ts"]
+}

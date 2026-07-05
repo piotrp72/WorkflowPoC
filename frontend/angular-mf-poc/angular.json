@@ -1,0 +1,302 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "orchestrator": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/orchestrator",
+      "sourceRoot": "projects/orchestrator/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "tsConfig": "projects/orchestrator/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/orchestrator/public",
+                "output": "."
+              }
+            ],
+            "styles": ["projects/orchestrator/src/styles.css"],
+            "main": "projects/orchestrator/src/main.ts",
+            "outputPath": "dist/orchestrator",
+            "index": "projects\\orchestrator\\src\\index.html",
+            "extraWebpackConfig": "projects/orchestrator/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/orchestrator/webpack.prod.config.js"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "orchestrator:build:production",
+              "extraWebpackConfig": "projects/orchestrator/webpack.prod.config.js"
+            },
+            "development": {
+              "buildTarget": "orchestrator:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 8081,
+            "publicHost": "http://localhost:8081",
+            "extraWebpackConfig": "projects/orchestrator/webpack.config.js"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "calculator": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/calculator",
+      "sourceRoot": "projects/calculator/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "tsConfig": "projects/calculator/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/calculator/public",
+                "output": "."
+              }
+            ],
+            "styles": ["projects/calculator/src/styles.css"],
+            "main": "projects/calculator/src/main.ts",
+            "outputPath": "dist/calculator",
+            "index": "projects\\calculator\\src\\index.html",
+            "extraWebpackConfig": "projects/calculator/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/calculator/webpack.prod.config.js"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "calculator:build:production",
+              "extraWebpackConfig": "projects/calculator/webpack.prod.config.js"
+            },
+            "development": {
+              "buildTarget": "calculator:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 8082,
+            "publicHost": "http://localhost:8082",
+            "extraWebpackConfig": "projects/calculator/webpack.config.js"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "collector": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/collector",
+      "sourceRoot": "projects/collector/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "tsConfig": "projects/collector/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/collector/public",
+                "output": "."
+              }
+            ],
+            "styles": ["projects/collector/src/styles.css"],
+            "main": "projects/collector/src/main.ts",
+            "outputPath": "dist/collector",
+            "index": "projects\\collector\\src\\index.html",
+            "extraWebpackConfig": "projects/collector/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/collector/webpack.prod.config.js"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "collector:build:production",
+              "extraWebpackConfig": "projects/collector/webpack.prod.config.js"
+            },
+            "development": {
+              "buildTarget": "collector:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 8083,
+            "publicHost": "http://localhost:8083",
+            "extraWebpackConfig": "projects/collector/webpack.config.js"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "decision": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/decision",
+      "sourceRoot": "projects/decision/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "tsConfig": "projects/decision/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/decision/public",
+                "output": "."
+              }
+            ],
+            "styles": ["projects/decision/src/styles.css"],
+            "main": "projects/decision/src/main.ts",
+            "outputPath": "dist/decision",
+            "index": "projects\\decision\\src\\index.html",
+            "extraWebpackConfig": "projects/decision/webpack.config.js",
+            "commonChunk": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/decision/webpack.prod.config.js"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "decision:build:production",
+              "extraWebpackConfig": "projects/decision/webpack.prod.config.js"
+            },
+            "development": {
+              "buildTarget": "decision:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 8082,
+            "publicHost": "http://localhost:8084",
+            "extraWebpackConfig": "projects/decision/webpack.config.js"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
+  }
+}

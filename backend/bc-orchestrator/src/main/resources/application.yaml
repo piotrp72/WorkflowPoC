@@ -1,0 +1,7 @@
+eximeebpms.bpm:
+  admin-user:
+    id: piotrp
+    password: piotrp
+    firstName: Piotr
+  filter:
+    create: All tasks

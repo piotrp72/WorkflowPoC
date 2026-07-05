@@ -1,0 +1,64 @@
+# ---- Java / Maven / Gradle ----
+target/
+build/
+**/build/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.mvn/
+
+# Gradle
+.gradle/
+gradle-app.setting
+
+# Logi JVM
+*.log
+hs_err_pid*
+replay_pid*
+
+# ---- IntelliJ / IDE ----
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VCS
+.editorconfig
+
+# ---- Node / Angular ----
+**/node_modules/
+**/dist/
+**/build/
+**/.angular/cache/
+**/coverage/
+node_modules/
+dist/
+build/
+.angular/cache/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+.env
+.env.local
+.env.*.local
+.tmp/
+temp/
+.cache/
+
+# ---- Systemowe śmieci ----
+.DS_Store
+Thumbs.db
+/frontend/angular-mf-poc/node_modules/

@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/orchestrator/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/orchestrator/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/calculator/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/calculator/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/collector/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/collector/tsconfig.spec.json"
+    },
+     {
+      "path": "./projects/decision/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/decision/tsconfig.spec.json"
+    }
+  ]
+}

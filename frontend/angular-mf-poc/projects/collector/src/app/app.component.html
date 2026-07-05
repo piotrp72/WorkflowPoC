@@ -1,0 +1,17 @@
+<div class="page">
+  <div class="card">
+    <h1>Witamy w collectorze</h1>
+    <p class="application-id">Identyfikator procesu: <strong>{{ applicationId }}</strong></p>
+
+    <form>
+      <label for="birthDate">Data urodzenia</label>
+      <input id="birthDate" name="birthData" type="text" [(ngModel)]="birthDate" placeholder="Wpisz datę urodzenia" />
+      
+      <div class="actions">
+        <button type="button" (click)="openDecision()">DALEJ</button>
+      </div>
+    </form>
+  </div>
+
+  
+</div>

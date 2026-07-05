@@ -1,0 +1,29 @@
+<div class="page">
+  <div class="container">
+    <div class="header">
+      <h1>START</h1>
+
+      <p class="application-id" *ngIf="loading">
+        Trwa generowanie identyfikatora procesu...
+      </p>
+
+      <p class="application-id" *ngIf="!loading && applicationId">
+        Identyfikator procesu: <strong>{{ applicationId }}</strong>
+      </p>
+
+      <p class="application-id error" *ngIf="!loading && error">
+        {{ error }}
+      </p>
+    </div>
+
+    <div class="actions">
+      <button type="button" (click)="openCalculator()">KALKULACJA</button>
+      <button type="button" (click)="openCollector()">KOLEKCJA</button>
+      <button type="button" (click)="openDecision()">DECYZJA</button>
+    </div>
+
+    <div class="host-slot">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

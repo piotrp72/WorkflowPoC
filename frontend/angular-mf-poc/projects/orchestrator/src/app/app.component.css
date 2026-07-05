@@ -1,0 +1,59 @@
+:host {
+  display: block;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 32px;
+  background: linear-gradient(180deg, #eef4ff 0%, #f7f9fc 100%);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  padding: 32px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 42px;
+  color: #0f172a;
+}
+
+.application-id {
+  margin: 0;
+  font-size: 18px;
+  color: #334155;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+button {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.host-slot {
+  min-height: 380px;
+  border: 1px solid #dbe3f0;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: 24px;
+}
