@@ -3,23 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.6</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>pl.com.otos.workflow.poc</groupId>
+        <artifactId>workflow-poc</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
-    <groupId>pl.com.otos.workflow.poc</groupId>
+
     <artifactId>bc-orchestrator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <name>bc-orchestrator</name>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <eximeebpms.spring-boot.version>1.2.0</eximeebpms.spring-boot.version>
-        <spring-boot.version>3.4.4</spring-boot.version>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>19</maven.compiler.release>
     </properties>
 
     <dependencies>
