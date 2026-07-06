@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   
-  birthDate = '';
+  firstName = '';
   applicationId = '';
 
   constructor(

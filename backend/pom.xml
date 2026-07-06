@@ -19,6 +19,8 @@
     <modules>
         <module>bc-collector</module>
         <module>bc-orchestrator</module>
+        <module>bc-calculator</module>
+        <module>bc-decision</module>
     </modules>
 
 </project>

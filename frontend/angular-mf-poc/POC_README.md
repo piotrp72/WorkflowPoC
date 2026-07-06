@@ -56,7 +56,7 @@ i w tym miejscy utworzyłem `decision` jako kopię `calculator` z uwzględnienie
 
 ### 5. Uruchom aplikacje
 
-cd .\angular-mf-poc\
+cd .\frontend\angular-mf-poc\
 
 ```bash
 npm run start:all

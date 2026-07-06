@@ -4,9 +4,8 @@
     <p class="application-id">Identyfikator procesu: <strong>{{ applicationId }}</strong></p>
 
     <form>
-      <label for="birthDate">Data urodzenia</label>
-      <input id="birthDate" name="birthData" type="text" [(ngModel)]="birthDate" placeholder="Wpisz datę urodzenia" />
-      
+      <label for="firstName">Imię</label>
+      <input id="firstName" name="firstName" type="text" [(ngModel)]="firstName" placeholder="Wpisz imię" />      
       <div class="actions">
         <button type="button" (click)="openDecision()">DALEJ</button>
       </div>
