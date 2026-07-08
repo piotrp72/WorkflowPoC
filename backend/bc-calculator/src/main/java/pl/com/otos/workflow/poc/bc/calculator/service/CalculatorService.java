@@ -11,7 +11,10 @@ import pl.com.otos.workflow.poc.bc.calculator.dto.CalculatorRequest;
 @Slf4j
 public class CalculatorService {
 
+    private final KafkaProducerService kafkaProducerService;
 
-public CalculatorResponse completeTask(CalculatorRequest request) {
-    return new CalculatorResponse("OK - >" + request.amount());
-}}
+    public CalculatorResponse completeTask(CalculatorRequest request) {
+        kafkaProducerService.sendMessage("task-completed", "calculator", request);
+        return new CalculatorResponse("OK - >" + request);
+    }
+}
