@@ -1,0 +1,13 @@
+package pl.com.otos.workflow.poc.bc.decision;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Decision {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Decision.class, args);
+    }
+
+}

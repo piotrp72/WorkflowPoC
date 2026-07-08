@@ -11,8 +11,8 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>bc-collector</artifactId>
-    <name>bc-collector</name>
+    <artifactId>bc-decision</artifactId>
+    <name>bc-desicion</name>
     <packaging>jar</packaging>
 
     <dependencies>
