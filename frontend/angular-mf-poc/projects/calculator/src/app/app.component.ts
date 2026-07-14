@@ -12,14 +12,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   amount = '';
-  applicationId = '';
+  processId = '';
  
    constructor(
     private router: Router  
    ) {}
 
   ngOnInit(): void {
-    this.applicationId = sessionStorage.getItem('applicationId') ?? 'BRAK-ID';
+    this.processId = sessionStorage.getItem('processId') ?? 'BRAK-ID';
   }
 
   openCollector(): void {

@@ -75,7 +75,7 @@ ng serve decision --port 8084
 
 - komponent hosta orchestratora,
 - widok START i przyciski calculator / collector,
-- logikę generowania `applicationId`,
+- logikę generowania `processId`,
 - formularz calculatora z prezentacją identyfikatora,
 - formularz collectora z prezentacją identyfikatora,
 - przykładową konfigurację routingu i lazy-load remote'ów.

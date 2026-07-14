@@ -15,7 +15,8 @@ import { switchMap } from 'rxjs/operators';
 
 export class AppComponent implements OnInit {
   private http = inject(HttpClient);
-  applicationId = '';
+  processId = '';
+  taskId = '';
   loading = true;
   error: string | null = null;
 
@@ -25,22 +26,20 @@ export class AppComponent implements OnInit {
     private processService: ProcessService
   ) {}
 
-//  ngOnInit(): void {
-//    this.generateApplicationId();
-//  }
-
   ngOnInit(): void {
     this.loading = true;
     this.error = '';
 
       this.processService.createProcess().pipe(
         switchMap(response => {
-          this.applicationId = response.applicationId;
-          sessionStorage.setItem('applicationId', this.applicationId);
-          return this.processService.getNextStep(response.applicationId);
+          return this.processService.getNextStep(response.processId);
         })
       ).subscribe({
         next: response => {
+          this.processId = response.processId;
+          this.taskId = response.taskId;
+          sessionStorage.setItem('processId', this.processId);
+          sessionStorage.setItem('taksId', this.taskId);
           switch (response.step) {
             case 'calculator':
               this.openCalculator();
@@ -81,24 +80,4 @@ export class AppComponent implements OnInit {
   openDecision(): void {
     this.router.navigate(['/decision']);
   } 
-
-  private generateApplicationId(): void {
-    this.loading = true;
-    this.error = '';
-
-    this.http.post<{ applicationId: string }>('http://localhost:8091/workflow/process', {})
-      .subscribe({
-        next: response => {
-          this.applicationId = response.applicationId;
-          sessionStorage.setItem('applicationId', this.applicationId);
-          this.loading = false;
-          this.cdr.detectChanges();
-        },
-        error: () => {
-          this.error = 'Nie udało się utworzyć wniosku.';
-          this.loading = false;
-          this.cdr.detectChanges();
-        }
-      });
-  }
 }

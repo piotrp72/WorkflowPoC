@@ -3,15 +3,15 @@
     <div class="header">
       <h1>START</h1>
 
-      <p class="application-id" *ngIf="loading">
+      <p class="process-id" *ngIf="loading">
         Trwa generowanie identyfikatora procesu...
       </p>
 
-      <p class="application-id" *ngIf="!loading && applicationId">
-        Identyfikator procesu: <strong>{{ applicationId }}</strong>
+      <p class="process-id" *ngIf="!loading && processId">
+        Identyfikator procesu: <strong>{{ processId }}</strong>
       </p>
 
-      <p class="application-id error" *ngIf="!loading && error">
+      <p class="process-id error" *ngIf="!loading && error">
         {{ error }}
       </p>
     </div>

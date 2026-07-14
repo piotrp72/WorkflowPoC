@@ -12,9 +12,9 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent implements OnInit {
    
   choice = '';
-  applicationId = '';
+  processId = '';
 
   ngOnInit(): void {
-    this.applicationId = sessionStorage.getItem('applicationId') ?? 'BRAK-ID';
+    this.processId = sessionStorage.getItem('processId') ?? 'BRAK-ID';
   }
 }

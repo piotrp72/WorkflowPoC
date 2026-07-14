@@ -3,6 +3,8 @@
 `orchestrator` - host, port 8081,
 `calculator` - remote, port 8082,
 `collector` - remote, port 8083.
+
+uruchomienie npm run start:all w katalogu \frontend\angular-mf-poc
 ## Backend
 `calculator` - 8092
 `collector` - 8093
