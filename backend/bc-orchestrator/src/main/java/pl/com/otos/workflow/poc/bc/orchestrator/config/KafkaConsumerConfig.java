@@ -14,7 +14,7 @@ import org.springframework.kafka.support.serializer.DeserializationException;
 import org.springframework.kafka.support.serializer.ErrorHandlingDeserializer;
 import org.springframework.kafka.support.serializer.JacksonJsonDeserializer;
 import org.springframework.util.backoff.FixedBackOff;
-import pl.com.otos.workflow.poc.bc.orchestrator.kafka.payload.TaskCompletedEvent;
+import pl.com.otos.workflow.poc.bc.orchestrator.kafka.TaskCompletedEvent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class KafkaConsumerConfig {
         props.put("spring.json.use.type.headers", false);
 
         props.put("spring.json.value.default.type",
-                "pl.com.otos.workflow.poc.bc.orchestrator.kafka.payload.TaskCompletedEvent");
+                "pl.com.otos.workflow.poc.bc.orchestrator.kafka.TaskCompletedEvent");
         props.put("spring.json.trusted.packages", "pl.com.otos.workflow.poc.bc");
 
         return new DefaultKafkaConsumerFactory<>(props);
