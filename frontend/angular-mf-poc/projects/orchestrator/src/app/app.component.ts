@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
           this.processId = response.processId;
           this.taskId = response.taskId;
           sessionStorage.setItem('processId', this.processId);
-          sessionStorage.setItem('taksId', this.taskId);
+          sessionStorage.setItem('taskId', this.taskId);
           switch (response.step) {
             case 'calculator':
               this.openCalculator();

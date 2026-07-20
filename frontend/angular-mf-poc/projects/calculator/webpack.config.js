@@ -7,7 +7,7 @@ module.exports = withModuleFederationPlugin({
   name: 'calculator',
 
   exposes: {
-    './Component': './projects/calculator/src/app/app.component.ts',
+    './Component': './projects/calculator/src/app/component/calculator.component.ts',
   },
 
   shared: {

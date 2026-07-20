@@ -32,11 +32,11 @@ public class ProcessService {
         return new StartProcessResponse(instance.getProcessInstanceId());
     }
 
-    public ActiveTaskListResponse getActiveTasksByApplicationId(String applicationId) {
+    public ActiveTaskListResponse getActiveTasksByApplicationId(String processId) {
         List<TaskDto> taskList;
 
         taskList = taskService.createTaskQuery()
-                .processInstanceId(applicationId)
+                .processInstanceId(processId)
                 .active()
                 .list()
                 .stream()
@@ -47,16 +47,15 @@ public class ProcessService {
 
     }
 
-    public NextStepResponse getNextStep(String applicationId) {
+    public NextStepResponse getNextStep(String processId) {
         Task task;
-
         task = taskService.createTaskQuery()
-                .processInstanceId(applicationId)
+                .processInstanceId(processId)
                 .active()
                 .singleResult();
 
         if (task != null) {
-            return new NextStepResponse(applicationId, task.getId(),task.getTaskDefinitionKey());
+            return new NextStepResponse(processId, task.getId(),task.getTaskDefinitionKey());
         } else {
             return new NextStepResponse("","","ERROR");
         }

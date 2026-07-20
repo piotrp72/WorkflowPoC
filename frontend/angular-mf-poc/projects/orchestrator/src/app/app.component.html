@@ -8,7 +8,8 @@
       </p>
 
       <p class="process-id" *ngIf="!loading && processId">
-        Identyfikator procesu: <strong>{{ processId }}</strong>
+        Identyfikator procesu: <strong>{{ processId }}</strong><br>
+        Identyfiktator zadania: <strong>{{ taskId }}</strong>
       </p>
 
       <p class="process-id error" *ngIf="!loading && error">

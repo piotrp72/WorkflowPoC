@@ -25,14 +25,14 @@ public class ProcessController {
         return processService.startProcess();
     }
 
-    @GetMapping("/{applicationId}/tasks")
-    public ActiveTaskListResponse getActiveTasksByApplicationId(@PathVariable String applicationId) {
-        return processService.getActiveTasksByApplicationId(applicationId);
+    @GetMapping("/{processId}/tasks")
+    public ActiveTaskListResponse getActiveTasksByApplicationId(@PathVariable String processId) {
+        return processService.getActiveTasksByApplicationId(processId);
     }
 
-    @GetMapping("/{applicationId}/next-step")
-    public NextStepResponse getNextStep(@PathVariable String applicationId) {
-        return processService.getNextStep(applicationId);
+    @GetMapping("/{processId}/next-step")
+    public NextStepResponse getNextStep(@PathVariable("processId") String processId) {
+        return processService.getNextStep(processId);
     }
 
 }

@@ -10,7 +10,7 @@ export const routes: Routes = [
         type: 'module',
         remoteEntry: 'http://localhost:8082/remoteEntry.js',
         exposedModule: './Component'
-      }).then(m => m.AppComponent)
+      }).then(m => m.CalculatorComponent)
   },
   {
     path: 'collector',

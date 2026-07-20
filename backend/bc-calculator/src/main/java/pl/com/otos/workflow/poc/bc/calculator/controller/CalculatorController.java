@@ -19,9 +19,9 @@ public class CalculatorController {
     @Qualifier("CalculatorService")
     private final CalculatorService calculatorService;
 
-    @PostMapping
-    public CalculatorResponse completeTask(@RequestBody CalculatorRequest request) {
-        MessageDto messageDto = new MessageDto("calculator","123","233",new CalculatorPayload(request.amount()));
-        return calculatorService.completeTask(messageDto);
+    @PostMapping("/finish")
+    public CalculatorResponse finishTask(@RequestBody CalculatorRequest request) {
+        MessageDto messageDto = new MessageDto("calculator",request.processId(), request.taskId(), new CalculatorPayload(request.amount()));
+        return calculatorService.finishTask(messageDto);
     }
 }

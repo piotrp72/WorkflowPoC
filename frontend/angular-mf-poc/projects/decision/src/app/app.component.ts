@@ -13,8 +13,10 @@ export class AppComponent implements OnInit {
    
   choice = '';
   processId = '';
+  taskId = '';
 
   ngOnInit(): void {
     this.processId = sessionStorage.getItem('processId') ?? 'BRAK-ID';
+    this.taskId = sessionStorage.getItem('taskId') ?? 'BRAK-ID';
   }
 }

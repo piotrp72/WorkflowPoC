@@ -5,6 +5,6 @@
     "outDir": "../../out-tsc/app",
     "types": []
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "../../../trash/app.spec.ts", "../../../trash/app.ts"],
   "exclude": ["src/**/*.spec.ts"]
 }

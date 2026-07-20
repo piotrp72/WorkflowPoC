@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   
   firstName = '';
   processId = '';
+  taskId = '';
 
   constructor(
     private router: Router
@@ -21,6 +22,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.processId = sessionStorage.getItem('processId') ?? 'BRAK-ID';
+    this.taskId = sessionStorage.getItem('taskId') ?? 'BRAK-ID';
+
   }
 
   openDecision(): void {

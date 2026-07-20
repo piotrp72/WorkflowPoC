@@ -1,14 +1,17 @@
 <div class="page">
   <div class="card">
     <h1>Witamy w calculatorze</h1>
-    <p class="process-id">Identyfikator procesu: <strong>{{ processId }}</strong></p>
+    <p class="process-id">Identyfikator procesu: <strong>{{ processId }}</strong>
+       Identyfikator zadania: <strong>{{ taskId }}</strong>
+    </p>
+    
 
     <form>
       <label for="amount">Kwota</label>
       <input id="amount" name="amount" type="text" [(ngModel)]="amount" placeholder="Wpisz kwotę" />
 
       <div class="actions">
-       <button type="button" (click)="openCollector()">DALEJ</button>
+       <button type="button" (click)="finishTask()">DALEJ</button>
       </div>
     </form>
   </div>

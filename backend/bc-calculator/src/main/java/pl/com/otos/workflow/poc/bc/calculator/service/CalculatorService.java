@@ -13,7 +13,7 @@ public class CalculatorService {
 
     private final KafkaProducerService kafkaProducerService;
 
-    public CalculatorResponse completeTask(MessageDto request) {
+    public CalculatorResponse finishTask(MessageDto request) {
         kafkaProducerService.sendMessage("task.completed", "calculator", request);
         return new CalculatorResponse("OK - >" + request);
     }
