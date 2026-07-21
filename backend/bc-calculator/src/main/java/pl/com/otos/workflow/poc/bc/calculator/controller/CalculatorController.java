@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.com.otos.workflow.poc.bc.calculator.dto.CalculatorPayload;
 import pl.com.otos.workflow.poc.bc.calculator.dto.CalculatorRequest;
 import pl.com.otos.workflow.poc.bc.calculator.dto.CalculatorResponse;
-import pl.com.otos.workflow.poc.bc.calculator.dto.MessageDto;
+import pl.com.otos.workflow.poc.bc.calculator.dto.FinishCalculatorTaskDto;
 import pl.com.otos.workflow.poc.bc.calculator.service.CalculatorService;
 
 @Slf4j
@@ -21,7 +21,7 @@ public class CalculatorController {
 
     @PostMapping("/finish")
     public CalculatorResponse finishTask(@RequestBody CalculatorRequest request) {
-        MessageDto messageDto = new MessageDto("calculator",request.processId(), request.taskId(), new CalculatorPayload(request.amount()));
-        return calculatorService.finishTask(messageDto);
+        FinishCalculatorTaskDto finishCalculatorTaskDto = new FinishCalculatorTaskDto("calculator",request.processId(), request.taskId(), new CalculatorPayload(request.amount()));
+        return calculatorService.finishTask(finishCalculatorTaskDto);
     }
 }

@@ -19,13 +19,13 @@ import java.util.stream.Collectors;
 @Slf4j
 public class ProcessService {
 
-    private final RuntimeService runtimeService;
-    private final TaskService taskService;
+    private final RuntimeService workflowEngineRuntimeService;
+    private final TaskService workflowEngineTaskService;
     private static final String PROCESS_KEY = "CreditProcess";
 
     public StartProcessResponse startProcess() {
         ProcessInstance instance =
-                runtimeService.startProcessInstanceByKey(
+                workflowEngineRuntimeService.startProcessInstanceByKey(
                         PROCESS_KEY
                 );
         log.info("Starting process {}", instance.getProcessInstanceId());
@@ -35,7 +35,7 @@ public class ProcessService {
     public ActiveTaskListResponse getActiveTasksByApplicationId(String processId) {
         List<TaskDto> taskList;
 
-        taskList = taskService.createTaskQuery()
+        taskList = workflowEngineTaskService.createTaskQuery()
                 .processInstanceId(processId)
                 .active()
                 .list()
@@ -49,7 +49,7 @@ public class ProcessService {
 
     public NextStepResponse getNextStep(String processId) {
         Task task;
-        task = taskService.createTaskQuery()
+        task = workflowEngineTaskService.createTaskQuery()
                 .processInstanceId(processId)
                 .active()
                 .singleResult();

@@ -5,19 +5,19 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
-import pl.com.otos.workflow.poc.bc.calculator.dto.MessageDto;
+import pl.com.otos.workflow.poc.bc.calculator.dto.FinishCalculatorTaskDto;
 
 @Service
 public class KafkaProducerService {
 
-    private final KafkaTemplate<String, MessageDto> kafkaTemplate;
+    private final KafkaTemplate<String, FinishCalculatorTaskDto> kafkaTemplate;
 
-    public KafkaProducerService(KafkaTemplate<String, MessageDto> kafkaTemplate) {
+    public KafkaProducerService(KafkaTemplate<String, FinishCalculatorTaskDto> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(String topic, String key, MessageDto message) {
-        CompletableFuture<SendResult<String, MessageDto>> future =
+    public void sendMessage(String topic, String key, FinishCalculatorTaskDto message) {
+        CompletableFuture<SendResult<String, FinishCalculatorTaskDto>> future =
                 kafkaTemplate.send(topic, key, message);
 
         future.whenComplete((result, ex) -> {

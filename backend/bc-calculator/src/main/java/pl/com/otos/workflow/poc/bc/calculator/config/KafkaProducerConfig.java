@@ -11,13 +11,13 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JacksonJsonSerializer;
-import pl.com.otos.workflow.poc.bc.calculator.dto.MessageDto;
+import pl.com.otos.workflow.poc.bc.calculator.dto.FinishCalculatorTaskDto;
 
 @Configuration
 public class KafkaProducerConfig {
 
     @Bean
-    public ProducerFactory<String, MessageDto> producerFactory() {
+    public ProducerFactory<String, FinishCalculatorTaskDto> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -27,7 +27,7 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, MessageDto> kafkaTemplate() {
+    public KafkaTemplate<String, FinishCalculatorTaskDto> kafkaTemplate() {
 
         return new KafkaTemplate<>(producerFactory());
     }

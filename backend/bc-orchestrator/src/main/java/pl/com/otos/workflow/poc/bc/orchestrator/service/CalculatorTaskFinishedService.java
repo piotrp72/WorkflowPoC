@@ -3,7 +3,7 @@ package pl.com.otos.workflow.poc.bc.orchestrator.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.com.otos.workflow.poc.bc.orchestrator.kafka.payload.CalculatorPayload;
+import pl.com.otos.workflow.poc.bc.orchestrator.dto.payload.CalculatorPayload;
 
 @Slf4j
 @RequiredArgsConstructor
