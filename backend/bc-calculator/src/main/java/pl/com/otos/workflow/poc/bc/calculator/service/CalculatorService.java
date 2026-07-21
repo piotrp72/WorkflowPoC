@@ -6,20 +6,17 @@ import org.springframework.stereotype.Service;
 import pl.com.otos.workflow.poc.bc.calculator.client.OrchestratorClient;
 import pl.com.otos.workflow.poc.bc.calculator.dto.CalculatorResponse;
 import pl.com.otos.workflow.poc.bc.calculator.dto.CompleteTaskResponse;
-import pl.com.otos.workflow.poc.bc.calculator.dto.FinishCalculatorTaskDto;
+import pl.com.otos.workflow.poc.bc.calculator.dto.FinishCalculatorTask;
 
 @Service("CalculatorService")
 @RequiredArgsConstructor
 @Slf4j
 public class CalculatorService {
 
-    private final KafkaProducerService kafkaProducerService;
     private final OrchestratorClient orchestratorClient;
 
-    public CalculatorResponse finishTask(FinishCalculatorTaskDto request) {
-        log.info("Początek serwisu");
-      //  kafkaProducerService.sendMessage("task.completed", "calculator", request);
+    public CalculatorResponse finishTask(FinishCalculatorTask request) {
         CompleteTaskResponse completeTaskResponse = orchestratorClient.completeCalculatorTask(request);
-        return new CalculatorResponse("STATUS - >" + completeTaskResponse.status());
+        return new CalculatorResponse("STATUS - > " + completeTaskResponse.status());
     }
 }

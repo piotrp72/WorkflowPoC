@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.ActiveTaskListResponse;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.NextStepResponse;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.StartProcessResponse;
-import pl.com.otos.workflow.poc.bc.orchestrator.dto.TaskDto;
+import pl.com.otos.workflow.poc.bc.orchestrator.dto.WorkflowEngineTask;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,14 +33,14 @@ public class ProcessService {
     }
 
     public ActiveTaskListResponse getActiveTasksByApplicationId(String processId) {
-        List<TaskDto> taskList;
+        List<WorkflowEngineTask> taskList;
 
         taskList = workflowEngineTaskService.createTaskQuery()
                 .processInstanceId(processId)
                 .active()
                 .list()
                 .stream()
-                .map(task -> new TaskDto(task.getId(),task.getTaskDefinitionKey()))
+                .map(task -> new WorkflowEngineTask(task.getId(),task.getTaskDefinitionKey()))
                 .collect(Collectors.toList());
 
         return new ActiveTaskListResponse(taskList);
