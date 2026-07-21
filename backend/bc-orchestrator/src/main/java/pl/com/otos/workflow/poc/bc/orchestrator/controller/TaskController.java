@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-import pl.com.otos.workflow.poc.bc.orchestrator.dto.CompleteTaskResponse;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.FinishCalculatorTask;
+import pl.com.otos.workflow.poc.bc.orchestrator.dto.NextStep;
 import pl.com.otos.workflow.poc.bc.orchestrator.service.TaskService;
 
 @Slf4j
@@ -18,8 +18,8 @@ public class TaskController {
     private final TaskService taskService;
 
     @PostMapping("/calculator/complete")
-    public CompleteTaskResponse completeCalculatorTask(@RequestBody FinishCalculatorTask request) {
-        return taskService.completeCalculatorTask(request.taskId(), request.payload());
+    public NextStep completeCalculatorTask(@RequestBody FinishCalculatorTask request) {
+        return taskService.completeCalculatorTaskAndGetNextTask(request.processId(), request.taskId(), request.payload());
     }
 
 

@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-import pl.com.otos.workflow.poc.bc.orchestrator.dto.NextStepResponse;
+import pl.com.otos.workflow.poc.bc.orchestrator.dto.NextStep;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.StartProcessResponse;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.ActiveTaskListResponse;
 import pl.com.otos.workflow.poc.bc.orchestrator.service.ProcessService;
@@ -31,7 +31,7 @@ public class ProcessController {
     }
 
     @GetMapping("/{processId}/next-step")
-    public NextStepResponse getNextStep(@PathVariable("processId") String processId) {
+    public NextStep getNextStep(@PathVariable("processId") String processId) {
         return processService.getNextStep(processId);
     }
 

@@ -8,7 +8,7 @@ import org.eximeebpms.bpm.engine.runtime.ProcessInstance;
 import org.eximeebpms.bpm.engine.task.Task;
 import org.springframework.stereotype.Service;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.ActiveTaskListResponse;
-import pl.com.otos.workflow.poc.bc.orchestrator.dto.NextStepResponse;
+import pl.com.otos.workflow.poc.bc.orchestrator.dto.NextStep;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.StartProcessResponse;
 import pl.com.otos.workflow.poc.bc.orchestrator.dto.WorkflowEngineTask;
 import java.util.List;
@@ -47,7 +47,7 @@ public class ProcessService {
 
     }
 
-    public NextStepResponse getNextStep(String processId) {
+    public NextStep getNextStep(String processId) {
         Task task;
         task = workflowEngineTaskService.createTaskQuery()
                 .processInstanceId(processId)
@@ -55,9 +55,9 @@ public class ProcessService {
                 .singleResult();
 
         if (task != null) {
-            return new NextStepResponse(processId, task.getId(),task.getTaskDefinitionKey());
+            return new NextStep(processId, task.getId(),task.getTaskDefinitionKey());
         } else {
-            return new NextStepResponse("","","ERROR");
+            return new NextStep("","","ERROR");
         }
     }
 }
