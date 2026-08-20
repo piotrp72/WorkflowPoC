@@ -7,7 +7,7 @@ module.exports = withModuleFederationPlugin({
   name: 'calculator',
 
   exposes: {
-    './Component': './projects/calculator/src/app/component/calculator.component.ts',
+    './routes': './projects/calculator/src/app/calculator.routes.ts',
   },
 
   shared: {
@@ -23,9 +23,8 @@ module.exports.output.uniqueName = 'calculator';
 module.exports.output.publicPath = 'auto';
 module.exports.optimization.runtimeChunk = false;
 module.exports.devServer = {
-  port: 8082,
   headers: {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'http://localhost:8081',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
     'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
   },

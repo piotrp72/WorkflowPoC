@@ -2,18 +2,18 @@ import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ProcessService } from './service/process.service';
+import { ProcessService } from '../../service/process.service';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './orchestrator.component.html',
+  styleUrl: './orchestrator.component.css'
 })
 
-export class AppComponent implements OnInit {
+export class OrchestratorComponent implements OnInit {
   private http = inject(HttpClient);
   processId = '';
   taskId = '';
@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.error = '';
-
       this.processService.createProcess().pipe(
         switchMap(response => {
           return this.processService.getNextStep(response.processId);
@@ -40,6 +39,7 @@ export class AppComponent implements OnInit {
           this.taskId = response.taskId;
           sessionStorage.setItem('processId', this.processId);
           sessionStorage.setItem('taskId', this.taskId);
+          console.log('STEP: ',response.step)
           switch (response.step) {
             case 'calculator':
               this.openCalculator();
@@ -57,11 +57,13 @@ export class AppComponent implements OnInit {
               this.cdr.detectChanges();
               break;
             default:
-              this.router.navigate(['/finish']); 
+              this.router.navigate(['/error']); 
+              //TODO zmieniłem na error bo taka ścieżka chyba jest
           }
         },
         error: err => {
           this.error = 'Nie udało się utworzyć wniosku.';
+          this.router.navigate(['/error']); 
           this.loading = false;
           this.cdr.detectChanges();
         }

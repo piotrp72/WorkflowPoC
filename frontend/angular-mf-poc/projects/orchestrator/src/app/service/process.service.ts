@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { NextStepResponse } from '../dto/NextStepResponse';
-import { StartProcessResponse} from '../dto/StartProcessResponse';
+import { NextStepResponse } from '../model/NextStepResponse';
+import { StartProcessResponse} from '../model/StartProcessResponse';
 
 
 @Injectable({ providedIn: 'root' })

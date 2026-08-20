@@ -7,7 +7,7 @@ module.exports = withModuleFederationPlugin({
   name: 'decision',
 
   exposes: {
-    './Component': './projects/decision/src/app/app.component.ts',
+    './routes': './projects/decision/src/app/decision.routes.ts',
   },
 
   shared: {
@@ -23,9 +23,8 @@ module.exports.output.uniqueName = 'decision';
 module.exports.output.publicPath = 'auto';
 module.exports.optimization.runtimeChunk = false;
 module.exports.devServer = {
-  port: 8084,
   headers: {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'http://localhost:8081',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
     'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
   },

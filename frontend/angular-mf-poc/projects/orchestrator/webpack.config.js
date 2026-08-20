@@ -12,3 +12,8 @@ module.exports = withModuleFederationPlugin({
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
 });
+
+module.exports.output.uniqueName = 'orchestrator';
+module.exports.output.publicPath = 'auto';
+module.exports.output.scriptType = 'text/javascript';
+module.exports.optimization.runtimeChunk = false;

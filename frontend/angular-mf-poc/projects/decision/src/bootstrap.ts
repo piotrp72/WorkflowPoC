@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { decisionConfig } from './app/decision.config';
+import { DecisionComponent } from './app/component/decision/decision.component';
 
-bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err));
+bootstrapApplication(DecisionComponent, decisionConfig).catch((err) => console.error(err));

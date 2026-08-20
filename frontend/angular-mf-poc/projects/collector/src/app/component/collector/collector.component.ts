@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './collector.component.html',
+  styleUrl: './collector.component.css'
 })
-export class AppComponent implements OnInit {
+export class CollectorComponent implements OnInit {
   
   firstName = '';
   processId = '';
@@ -21,9 +21,13 @@ export class AppComponent implements OnInit {
    ) {}
 
   ngOnInit(): void {
+    try {
     this.processId = sessionStorage.getItem('processId') ?? 'BRAK-ID';
     this.taskId = sessionStorage.getItem('taskId') ?? 'BRAK-ID';
-
+  } catch {
+    this.processId = 'BRAK-ID';
+    this.taskId = 'BRAK-ID';
+  }
   }
 
   openDecision(): void {

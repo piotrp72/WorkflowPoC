@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { appConfig } from './app/orchestrator.config';
+import { OrchestratorComponent } from './app/component/orchestrator/orchestrator.component';
 
-bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err));
+bootstrapApplication(OrchestratorComponent, appConfig).catch((err) => console.error(err));

@@ -6,17 +6,22 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './decision.component.html',
+  styleUrl: './decision.component.css'
 })
-export class AppComponent implements OnInit {
+export class DecisionComponent implements OnInit {
    
   choice = '';
   processId = '';
   taskId = '';
 
   ngOnInit(): void {
+   try {
     this.processId = sessionStorage.getItem('processId') ?? 'BRAK-ID';
     this.taskId = sessionStorage.getItem('taskId') ?? 'BRAK-ID';
+  } catch {
+    this.processId = 'BRAK-ID';
+    this.taskId = 'BRAK-ID';
+  }
   }
 }

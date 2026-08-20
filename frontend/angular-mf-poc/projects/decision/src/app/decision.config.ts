@@ -1,8 +1,8 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
+import { routes } from './decision.routes';
 
-export const appConfig: ApplicationConfig = {
+export const decisionConfig: ApplicationConfig = {
   providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes)],
 };

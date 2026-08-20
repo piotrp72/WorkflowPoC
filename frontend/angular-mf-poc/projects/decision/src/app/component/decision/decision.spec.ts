@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { AppComponent } from './decision.component';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -18,6 +18,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(AppComponent);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('START');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Witamy w decisionze');
   });
 });
