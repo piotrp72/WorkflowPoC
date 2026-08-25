@@ -13,6 +13,6 @@ export class ProcessService {
   }
 
   getNextStep(processId: string) {
-    return this.http.get<NextStepResponse>(`http://localhost:8091/workflow/${processId}/next-step`);
+    return this.http.get<NextStepResponse>(`http://localhost:8091/workflow/process/${processId}/next-step`);
   }
 }

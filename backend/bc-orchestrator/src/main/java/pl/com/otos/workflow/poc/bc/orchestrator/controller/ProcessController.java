@@ -13,14 +13,13 @@ import pl.com.otos.workflow.poc.bc.orchestrator.service.ProcessService;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/workflow")
+@RequestMapping("/workflow/process")
 public class ProcessController {
 
     @Qualifier("ProcessService")
     private final ProcessService processService;
 
-
-    @PostMapping("/process")
+    @PostMapping
     public StartProcessResponse startProcess() {
         return processService.startProcess();
     }
